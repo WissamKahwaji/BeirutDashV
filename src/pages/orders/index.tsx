@@ -6,18 +6,22 @@ import {
   Grid,
   Paper,
   Box,
+  IconButton,
 } from "@mui/material";
 import LoadingPage from "../loadingPage";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Delete } from "@mui/icons-material";
+import { useState } from "react";
+import DeleteOrderDialog from "@/components/items/dialogs/deleteOrder";
 
 const Orders = () => {
   const { data: orders, isLoading, isError } = useGetOrdersQuery();
   if (isLoading) return <LoadingPage />;
   if (isError) return <></>;
   return (
-    <Box display={"flex"} flexDirection={"row"} gap={2}>
-      {orders?.map((order) => (
-        <Box key={order._id}>
+    <Grid item container xs={12} gap={4}>
+      {orders?.map(order => (
+        <Grid item xs={12} sm={6} md={4} lg={3} key={order._id}>
           <MuiLink
             component={Link}
             sx={{ textDecoration: "none" }}
@@ -56,9 +60,9 @@ const Orders = () => {
               </Stack>
             </Paper>
           </MuiLink>
-        </Box>
+        </Grid>
       ))}
-    </Box>
+    </Grid>
   );
 };
 

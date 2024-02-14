@@ -46,6 +46,7 @@ const Product = () => {
       { weight: "", price: "" },
       { weight: "", price: "" },
     ],
+    priceKg: product?.priceKg ?? 0,
   };
   const handleSubmit = (
     values: TProduct,
@@ -118,16 +119,16 @@ const Product = () => {
                   value={product?.type}
                   options={productTypes ?? []}
                   loading={isProductTypesLoading}
-                  getOptionLabel={(option) => option?.name!}
+                  getOptionLabel={option => option?.name!}
                   onChange={(e, newValue) => {
                     setFieldValue("type", newValue);
                   }}
-                  renderInput={(props) => (
+                  renderInput={props => (
                     <TextField {...props} label="product types" />
                   )}
                 />
               </Grid>
-              <Grid xs={12} md={5}>
+              {/* <Grid xs={12} md={5}>
                 {" "}
                 <TextField
                   name="deepDetails.0.price"
@@ -227,6 +228,18 @@ const Product = () => {
                     touched.deepDetails?.[2].weight &&
                     (errors.deepDetails?.[2] as string)
                   }
+                />
+              </Grid> */}
+              <Grid xs={12} md={5}>
+                {" "}
+                <TextField
+                  name="priceKg"
+                  fullWidth
+                  label={"price in KG"}
+                  value={values.priceKg}
+                  onChange={handleChange}
+                  error={touched.priceKg && !!errors.priceKg}
+                  helperText={touched.priceKg && (errors.priceKg as string)}
                 />
               </Grid>
               <Grid item xs={12} md={10.2}>

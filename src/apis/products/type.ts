@@ -10,6 +10,7 @@ export type Product = {
   title: string;
   desc: string;
   type: ProductType | null;
+  priceKg: number;
   __v?: number;
 };
 

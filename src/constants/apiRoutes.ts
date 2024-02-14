@@ -28,6 +28,7 @@ const ABOUT_US = {
 const ORDERS = {
   GET_ALL: "/orders",
   GET: (id: string) => `/orders/${id}`,
+  DELETE: (id: string) => `/orders/delete-order/${id}`,
 };
 const API_ROUTES = {
   AUTH,
