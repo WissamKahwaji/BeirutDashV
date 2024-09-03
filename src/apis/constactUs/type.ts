@@ -8,6 +8,7 @@ export type Content = {
   _id: string;
   phoneNumber: string;
   mobileOne: string;
+  mobileTwo?: string;
   location: string;
   email: string;
   whatsApp: string;

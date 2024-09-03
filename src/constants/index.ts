@@ -13,5 +13,5 @@ const NAV_LINKS = [
   { name: "about us", href: "/about-us", icon: InfoIcon },
   { name: "contact us", href: "/contact-us", icon: ContactPhoneIcon },
 ];
-const ORDERS_TABLE_HEADER = ["product", "quantity", "weight", "total price"];
+const ORDERS_TABLE_HEADER = ["product", "note", "weight", "total price"];
 export { NAV_LINKS, ORDERS_TABLE_HEADER };

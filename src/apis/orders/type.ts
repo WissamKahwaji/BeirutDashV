@@ -6,6 +6,8 @@ export type Order = {
   paymentMethod: "cash" | "card";
   updatedAt: string;
   userBuilding: string;
+  userFloorNo?: string;
+  userUnitNo?: string;
   userId: string;
   userMobileNumber: string;
   userName: string;
@@ -22,4 +24,5 @@ export type CartItem = {
   title: string;
   weight: number;
   _id?: string;
+  note?: string;
 };

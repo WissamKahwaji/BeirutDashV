@@ -89,6 +89,19 @@ const Contact = () => {
                     }
                   />{" "}
                   <TextField
+                    name="content.mobileTwo"
+                    fullWidth
+                    label={"another mobile number"}
+                    value={values.content.mobileTwo}
+                    onChange={handleChange}
+                    error={
+                      touched.content?.mobileTwo && !!errors.content?.mobileTwo
+                    }
+                    helperText={
+                      touched.content?.mobileTwo && errors.content?.mobileTwo
+                    }
+                  />{" "}
+                  <TextField
                     name="content.location"
                     fullWidth
                     label={"location"}

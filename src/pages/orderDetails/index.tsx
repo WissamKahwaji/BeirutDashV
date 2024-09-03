@@ -70,6 +70,40 @@ const OrderDetails = () => {
           </Typography>
           <Typography>{order?.city}</Typography>
         </Stack>
+        <Stack direction="row" spacing={5}>
+          {order?.userStreet && (
+            <Stack direction="row" spacing={1}>
+              <Typography color="primary" sx={{ fontWeight: "bold" }}>
+                userStreet:{" "}
+              </Typography>
+              <Typography>{order?.userStreet} </Typography>
+            </Stack>
+          )}
+          {order?.userBuilding && (
+            <Stack direction="row" spacing={1}>
+              <Typography color="primary" sx={{ fontWeight: "bold" }}>
+                user Building:{" "}
+              </Typography>
+              <Typography>{order?.userBuilding}</Typography>
+            </Stack>
+          )}
+          {order?.userFloorNo && (
+            <Stack direction="row" spacing={1}>
+              <Typography color="primary" sx={{ fontWeight: "bold" }}>
+                Floor Number:{" "}
+              </Typography>
+              <Typography>{order?.userFloorNo}</Typography>
+            </Stack>
+          )}
+          {order?.userUnitNo && (
+            <Stack direction="row" spacing={1}>
+              <Typography color="primary" sx={{ fontWeight: "bold" }}>
+                Unit Number:{" "}
+              </Typography>
+              <Typography>{order?.userUnitNo}</Typography>
+            </Stack>
+          )}
+        </Stack>
         <Stack direction="row" spacing={1}>
           <Typography color="primary" sx={{ fontWeight: "bold" }}>
             payment method:{" "}
@@ -122,7 +156,7 @@ const OrderDetails = () => {
                     </Box>
                   </Stack>
                 </TableCell>
-                <TableCell>{item.quantity}</TableCell>
+                <TableCell>{item.note ?? "---------"}</TableCell>
                 <TableCell>{item.weight}</TableCell>
                 <TableCell>
                   <Typography>
