@@ -13,6 +13,7 @@ export type Order = {
   userName: string;
   userNote: string;
   userStreet: string;
+  deliveryFee: number;
   __v: string;
   _id: string;
 };

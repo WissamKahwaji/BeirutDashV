@@ -110,6 +110,17 @@ const OrderDetails = () => {
           </Typography>
           <Typography>{order?.paymentMethod}</Typography>
         </Stack>
+        <Stack direction="row" spacing={1}>
+          <Typography color="primary" sx={{ fontWeight: "bold" }}>
+            Total Amount:{" "}
+          </Typography>
+          <Typography>
+            {(
+              (order?.cartItemsTotalPrice ?? 0) + (order?.deliveryFee ?? 0)
+            ).toFixed(2)}{" "}
+            AED
+          </Typography>
+        </Stack>
         <DeleteOrderDialog
           open={openDeleteOrderDialog}
           onClose={handleCloseDeleteOrderDialog}
